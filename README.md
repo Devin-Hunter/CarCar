@@ -2,8 +2,8 @@
 
 Team:
 
-* Person 1 - Which microservice?
-* Person 2 - Which microservice?
+* Person 1 - Devin Matherne: Automobile Service
+* Person 2 - Krystin Gonzales: Automobile Sales
 
 ## Design
 
