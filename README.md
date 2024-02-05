@@ -9,8 +9,20 @@ Team:
 
 ## Service microservice
 
-Explain your models and integration with the inventory
-microservice, here.
+How to run the project?
+
+Diagram of the Project:
+(excalidraw of how the models, microservices, pollers, etc are all connected)
+
+Explicitly defined URLS and ports for the microservice:
+URL:
+Ports:
+
+CRUD Route Documentation:
+(apis?)
+
+Identify Value Objects:
+Value Objects:
 
 ## Sales microservice
 
