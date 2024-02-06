@@ -31,7 +31,8 @@ def poll():
             # Write your polling logic, here
             # Do not copy entire file
             get_autos()
-            
+            vos= AutomobileVO.objects.all()
+            print(vos)
         except Exception as e:
             print(e, file=sys.stderr)
 
