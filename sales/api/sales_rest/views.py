@@ -24,7 +24,7 @@ def list_salespeople(request):
         salespeople = Salesperson.objects.all()
         return JsonResponse(
             {'salespeople': salespeople},
-            encoder = SalespersonEncoder,
+            encoder = SalespersonEncoder
         )
     else:
         try:
@@ -60,7 +60,7 @@ def list_customers(request):
         customers = Customer.objects.all()
         return JsonResponse(
             {'customers': customers},
-            encoder=CustomerEncoder,
+            encoder=CustomerEncoder
         )
     else:
         try:
@@ -92,7 +92,7 @@ class SaleEncoder(ModelEncoder):
         'price',
         'automobile',
         'salesperson',
-        'customer',
+        'customer'
     ]
     encoders = {
         'automobile': AutomobileVOEncoder(),

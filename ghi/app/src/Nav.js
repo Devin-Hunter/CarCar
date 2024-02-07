@@ -27,8 +27,15 @@ function Nav() {
             <li className='nav-item dropdown'>
               <a className="nav-link dropdown-toggle" id='navbarDarkDropdownMenuLink' role="button" data-bs-toggle="dropdown" aria-expanded="false" >Inventory</a>
               <div className='dropdown-menu dropdown-menu-dark'>
-                <a className='dropdown-item' href='/'>Current Inventory</a>
-                <a className='dropdown-item' href='/'>Add to Inventory</a>
+                <a className='dropdown-item' href='/automobiles'>Current Inventory</a>
+                <a className='dropdown-item' href='/automobiles/new'>Add to Inventory</a>
+              </div>
+            </li>
+            <li className='nav-item dropdown'>
+              <a className="nav-link dropdown-toggle" id='navbarDarkDropdownMenuLink' role="button" data-bs-toggle="dropdown" aria-expanded="false" >Sales People</a>
+              <div className='dropdown-menu dropdown-menu-dark'>
+                <a className='dropdown-item' href='/salesperson'>View Salespeople</a>
+                <a className='dropdown-item' href='/salesperson/new'>Add Salesperson</a>
               </div>
             </li>
 
