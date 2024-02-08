@@ -18,7 +18,6 @@ export default function ModelsList(props) {
         } else {
             const data = await response.json();
             const models = data.models;
-            console.log(models)
             setModels(models);
         }
     }
@@ -35,6 +34,7 @@ export default function ModelsList(props) {
 
     const handleSubmit = async function (event) {
         event.preventDefault();
+
 
         const url = `http://localhost:8100/api/models/`;
         const fetchConfig = {
@@ -87,10 +87,10 @@ export default function ModelsList(props) {
                             {models.map(mod => {
                                 return (
                                     <tr key={mod.id}>
-                                        <td>{ mod.name }</td>
-                                        <td>{ mod.manufacturer.name }</td>
-                                        <td>
-                                            <img src={mod.picture_url} alt='' className=""></img>
+                                        <td className="col-md-2">{ mod.name }</td>
+                                        <td className="col-md-2">{ mod.manufacturer.name }</td>
+                                        <td className="col-md-2">
+                                            <img className="img-fluid" src={mod.picture_url} alt='Responsive image' ></img>
                                         </td>
                                     </tr>
                                 )
@@ -111,18 +111,18 @@ export default function ModelsList(props) {
                                     </div>
 
                                     <div className="mb-3">
-                                        <select onChange={handleFormChange} required name="manufacturer" id="manufacturer_id" className="form-select">
+                                        <select onChange={handleFormChange} required name="manufacturer_id" id="manufacturer_id" className="form-select">
                                             <option value="">Choose a Manufacturer</option>
                                             {manufacturer.map(m => {
                                             return (
-                                                <option key={m.id} value={models.manufacturer_id}>{m.name}</option>
+                                                <option key={m.id} value={m.id}>{m.name}</option>
                                             )
                                             })}
                                         </select>
                                     </div>
 
                                     <div className="form-floating mb-3">
-                                        <input onChange={handleFormChange} placeholder="picture_url" required type="text" name="picture_url" id="picture_url" className="form-control" />
+                                        <input onChange={handleFormChange} placeholder="picture_url" required type="url" maxLength={200} name="picture_url" id="picture_url" className="form-control" />
                                         <label htmlFor="picture_url">Picture URL</label>
                                     </div>
 
