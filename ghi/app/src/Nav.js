@@ -10,20 +10,14 @@ function Nav() {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavDarkDropdown">
           <ul className='navbar-nav'>
-            <li className='nav-item dropdown'>
-              <a className="nav-link dropdown-toggle" id='navbarDarkDropdownMenuLink' role="button" data-bs-toggle="dropdown" aria-expanded="false" >Manufacturer</a>
-              <div className='dropdown-menu dropdown-menu-dark'>
-                <a className='dropdown-item' href='/'>Manufacturer List</a>
-                <a className='dropdown-item' href='/'>Add Manufacturer</a>
-              </div>
+            
+            <li className='nav-item'> 
+              <a className="nav-link" id='navbarDarkMenuLink' role="button" href='/manufacturers' aria-expanded="false" >Manufacturers</a>
             </li>
-            <li className='nav-item dropdown'>
-              <a className="nav-link dropdown-toggle" id='navbarDarkDropdownMenuLink' role="button" data-bs-toggle="dropdown" aria-expanded="false" >Models</a>
-              <div className='dropdown-menu dropdown-menu-dark'>
-                <a className='dropdown-item' href='/'>Model List</a>
-                <a className='dropdown-item' href='/'>Add Model</a>
-              </div>
+            <li className='nav-item'>
+              <a className="nav-link" id='navbarDarkMenuLink' role="button" href='/models' aria-expanded="false" >Models</a>
             </li>
+
             <li className='nav-item dropdown'>
               <a className="nav-link dropdown-toggle" id='navbarDarkDropdownMenuLink' role="button" data-bs-toggle="dropdown" aria-expanded="false" >Inventory</a>
               <div className='dropdown-menu dropdown-menu-dark'>
@@ -51,6 +45,22 @@ function Nav() {
                 <a className='dropdown-item' href='/sales'>List Sales</a>
                 <a className='dropdown-item' href='/sales/employee'>Sales by Employee</a>
                 <a className='dropdown-item' href='/sales/new'>Add Sale</a>
+              </div>
+            </li>
+            
+            <li className='nav-item dropdown'>
+              <a className="nav-link dropdown-toggle" id='navbarDarkDropdownMenuLink' role="button" data-bs-toggle="dropdown" aria-expanded="false" >Services</a>
+              <div className='dropdown-menu dropdown-menu-dark'>
+                <a className='dropdown-item' href='/appointments'>Service Appointments</a>
+                <a className='dropdown-item' href='/createappointment'>Create Service Appointment</a>
+                <a className='dropdown-item' href='/servicehistory'>Service History</a>
+              </div>
+            </li>
+            <li className='nav-item dropdown'>
+              <a className="nav-link dropdown-toggle" id='navbarDarkDropdownMenuLink' role="button" data-bs-toggle="dropdown" aria-expanded="false" >Technicians</a>
+              <div className='dropdown-menu dropdown-menu-dark'>
+                <a className='dropdown-item' href='/technicians'>View Technicians</a>
+                <a className='dropdown-item' href='/newtechnician'>Add Technician</a>
               </div>
             </li>
 
