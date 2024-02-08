@@ -9,6 +9,7 @@ import AddCustomer from './AddCustomerForm';
 import ListCustomers from './ListCustomers';
 import ListSales from './ListAllSales';
 import AddSale from './AddSaleRecordForm';
+import ListEmployeeSales from './EmployeeSales';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path='/customers' element={<ListCustomers />} />
           <Route path='/customers/new' element={<AddCustomer />} />
           <Route path='/sales' element={<ListSales />} />
+          <Route path='/sales/employee' element={<ListEmployeeSales />} />
           <Route path='/sales/new' element={<AddSale />} />
         </Routes>
       </div>

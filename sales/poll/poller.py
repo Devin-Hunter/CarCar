@@ -17,12 +17,14 @@ def get_autos():
     response = requests.get('http://inventory-api:8000/api/automobiles/')
     content = json.loads(response.content)
     autos = content['autos']
-    print(autos)
+    vos= AutomobileVO.objects.all()
+    print(vos)
     for auto in autos:
         AutomobileVO.objects.update_or_create(
             vin = auto['vin'],
-            sold = auto['sold']
+            defaults={'sold': auto['sold']}
         )
+    
 
 
 def poll():
@@ -32,8 +34,7 @@ def poll():
             # Write your polling logic, here
             # Do not copy entire file
             get_autos()
-            vos= AutomobileVO.objects.all()
-            print(vos)
+            
         except Exception as e:
             print(e, file=sys.stderr)
 

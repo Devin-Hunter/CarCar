@@ -122,6 +122,8 @@ def list_sales(request):
         try:
             vehicle= AutomobileVO.objects.get(vin = content['automobile'])
             content['automobile'] = vehicle
+            # vehicle.sold = True
+            # vehicle.save()
             print(content)
         except AutomobileVO.DoesNotExist:
             response = JsonResponse({'message': 'auto does not exist'})
@@ -153,3 +155,10 @@ def list_sales(request):
         )
         
 
+@require_http_methods(['GET'])
+def list_autoVOs(request):
+    VOs = AutomobileVO.objects.all()
+    return JsonResponse(
+        {'VOs': VOs},
+        encoder= AutomobileVOEncoder
+    )

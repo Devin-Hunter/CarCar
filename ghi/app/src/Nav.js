@@ -49,6 +49,7 @@ function Nav() {
               <a className="nav-link dropdown-toggle" id='navbarDarkDropdownMenuLink' role="button" data-bs-toggle="dropdown" aria-expanded="false" >Sales</a>
               <div className='dropdown-menu dropdown-menu-dark'>
                 <a className='dropdown-item' href='/sales'>List Sales</a>
+                <a className='dropdown-item' href='/sales/employee'>Sales by Employee</a>
                 <a className='dropdown-item' href='/sales/new'>Add Sale</a>
               </div>
             </li>
