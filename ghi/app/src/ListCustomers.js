@@ -36,7 +36,7 @@ const ListCustomers = function (){
                                     <td>{customer.first_name}</td>
                                     <td>{customer.last_name}</td>
                                     <td>{customer.address}</td>
-                                    <td>{customer.phone}</td>
+                                    <td>{customer.phone_number}</td>
                                 </tr>
                             )
                         })} 
