@@ -121,14 +121,31 @@ def list_sales(request):
         print(content)
         try:
             vehicle= AutomobileVO.objects.get(vin = content['automobile'])
-            vehicle['sold'] = True
-            print(vehicle)
+            content['automobile'] = vehicle
+            print(content)
         except AutomobileVO.DoesNotExist:
             response = JsonResponse({'message': 'auto does not exist'})
             response.status_code = 400
             return response
+        try:
+            salesperson = Salesperson.objects.get(employee_id = content['salesperson'])
+            content['salesperson'] = salesperson
+        except Salesperson.DoesNotExist:
+            response = JsonResponse({'message': 'salesperson does not exist'})
+            response.status_code = 400
+            return response
+        try:
+            customer = Customer.objects.get(id = content['customer'])
+            content['customer'] = customer
+        except Customer.DoesNotExist:
+            response = JsonResponse({'message':'customer does not exist'})
+            response.status_code = 400
+            return response
                 
-        new_sale = Sale.objects.create(**content)    
+        new_sale = Sale.objects.create(**content)
+
+        
+         
         return JsonResponse(
             new_sale,
             encoder=SaleEncoder,

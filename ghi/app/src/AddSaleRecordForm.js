@@ -23,7 +23,6 @@ const AddSale = function (){
                 const vehicles = vehicleData.autos.filter(vehicle => vehicle.sold === false); 
                 console.log(vehicleData);
                 setVehicles(vehicles);
-                console.log('vehicles',vehicles)
             }
 
             if (salespersonResponse.ok) {
@@ -77,6 +76,20 @@ const AddSale = function (){
         
         console.log(data)
 
+        const autoUrl = `http://localhost:8100/api/automobiles/${vehicleChoice}/`
+        const update = {"sold": true}
+        const autoFetchOptions = {
+            method: 'put',
+            body: JSON.stringify(update),
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        }
+        const autoUpdate = await fetch(autoUrl, autoFetchOptions)
+        if (autoUpdate.okay){
+            console.log('success!')
+        }
+
         const url = 'http://localhost:8090/api/sales/'
         const fetchOptions = {
             method: 'post',
@@ -99,7 +112,7 @@ const AddSale = function (){
         <div className='row'>
             <div className="offset-3 col-6">
                 <div className='shadow p-4 mt-4 mb-4' style={{backgroundColor: 'gray'}}>
-                    <form id='add-sales-person' > 
+                    <form id='add-sales-record' onSubmit={handleSubmit}> 
                         <h1>Add a New Sale</h1>
                         <div className="form-group mb-3">
                             <select onChange={handleVehicleChoice} name='vehicle'>
@@ -116,7 +129,7 @@ const AddSale = function (){
                                 <option value=''>Select a Salesperson</option>
                                 {salespeople.map(salesperson => {
                                     return(
-                                        <option key = {salesperson.employee_id}>{salesperson.employee_id} - {salesperson.first_name}</option>
+                                        <option key = {salesperson.employee_id} value = {salesperson.employee_id}>{salesperson.employee_id} - {salesperson.first_name}</option>
                                     );
                                 })}
                             </select>
@@ -126,7 +139,7 @@ const AddSale = function (){
                                 <option value=''>Select a Customer</option>
                                 {customers.map(customer => {
                                     return(
-                                        <option key = {customer.id}>{customer.first_name} {customer.last_name}</option>
+                                        <option key = {customer.id} value={customer.id} >{customer.first_name} {customer.last_name}</option>
                                     )
                                 })}
                             </select>

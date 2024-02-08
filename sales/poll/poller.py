@@ -16,8 +16,9 @@ from sales_rest.models import AutomobileVO
 def get_autos():
     response = requests.get('http://inventory-api:8000/api/automobiles/')
     content = json.loads(response.content)
-    print(content)
-    for auto in content['autos']:
+    autos = content['autos']
+    print(autos)
+    for auto in autos:
         AutomobileVO.objects.update_or_create(
             vin = auto['vin'],
             sold = auto['sold']

@@ -29,7 +29,7 @@ const AddCustomer = function (){
         data.first_name = firstName;
         data.last_name = lastName;
         data.address = address;
-        data.phone = phone;
+        data.phone_number = phone;
 
         const url= 'http://localhost:8090/api/customers/';
         const fetchConfig = {
@@ -42,8 +42,6 @@ const AddCustomer = function (){
 
         const response = await fetch(url, fetchConfig);
         if (response.ok) {
-            const newCustomer = await response.json();
-
             setFirstName('');
             setLastName('');
             setAddress('');
