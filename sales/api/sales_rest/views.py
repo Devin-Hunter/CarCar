@@ -39,6 +39,12 @@ def list_salespeople(request):
             response = JsonResponse({'message': 'Could not create salesperson'})
             response.status_code = 400
             return response
+        
+@require_http_methods(['DELETE'])
+def delete_salesperson(request, pk):
+    if request.method == 'DELETE':
+        count, _ = Salesperson.objects.filter(id=pk).delete()
+        return JsonResponse({"deleted": count >0})
 
 
 
@@ -51,7 +57,7 @@ class CustomerEncoder(ModelEncoder):
         'first_name',
         'last_name',
         'address',
-        'phone'
+        'phone_number'
     ]
 
 @require_http_methods(['GET', 'POST'])
@@ -84,6 +90,7 @@ class AutomobileVOEncoder(ModelEncoder):
         'vin',
         'sold'
     ]
+    
 
 class SaleEncoder(ModelEncoder):
     model = Sale
@@ -104,26 +111,28 @@ class SaleEncoder(ModelEncoder):
 @require_http_methods(['GET', 'POST'])
 def list_sales(request):
     if request.method == 'GET':
-        print(Sale.objects.all)
-        #*****************************************************************
-        #sold_vehicles isn't working quite right. come back to the filter 
-        sold_vehicles = Sale.objects.filter(automobile__sold=True)
-        #*****************************************************************
+        sales = Sale.objects.all()       
         return JsonResponse(
-            {'sold_vehicles': sold_vehicles},
+            {'sales': sales},
             encoder= SaleEncoder
         )
     else:
+        content = json.loads(request.body)
+        print(content)
         try:
-            content = json.loads(request.body)
-            new_sale = Sale.objects.create(**content)
-            return JsonResponse(
-                new_sale,
-                encoder=SaleEncoder,
-                safe=False
-            )
-        except:
-            response = JsonResponse({'message':'could not create sale'})
+            vehicle= AutomobileVO.objects.get(vin = content['automobile'])
+            vehicle['sold'] = True
+            print(vehicle)
+        except AutomobileVO.DoesNotExist:
+            response = JsonResponse({'message': 'auto does not exist'})
             response.status_code = 400
             return response
+                
+        new_sale = Sale.objects.create(**content)    
+        return JsonResponse(
+            new_sale,
+            encoder=SaleEncoder,
+            safe=False
+        )
+        
 

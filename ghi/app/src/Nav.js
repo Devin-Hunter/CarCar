@@ -38,13 +38,27 @@ function Nav() {
                 <a className='dropdown-item' href='/salesperson/new'>Add Salesperson</a>
               </div>
             </li>
+            <li className='nav-item dropdown'>
+              <a className="nav-link dropdown-toggle" id='navbarDarkDropdownMenuLink' role="button" data-bs-toggle="dropdown" aria-expanded="false" >Customers</a>
+              <div className='dropdown-menu dropdown-menu-dark'>
+                <a className='dropdown-item' href='/customers'>View Customers</a>
+                <a className='dropdown-item' href='/customers/new'>Add Customer</a>
+              </div>
+            </li>
+            <li className='nav-item dropdown'>
+              <a className="nav-link dropdown-toggle" id='navbarDarkDropdownMenuLink' role="button" data-bs-toggle="dropdown" aria-expanded="false" >Sales</a>
+              <div className='dropdown-menu dropdown-menu-dark'>
+                <a className='dropdown-item' href='/sales'>List Sales</a>
+                <a className='dropdown-item' href='/sales/new'>Add Sale</a>
+              </div>
+            </li>
 
           </ul>
             
         </div>
       </div>
     </nav>
-  )
+  );
 }
 
 export default Nav;

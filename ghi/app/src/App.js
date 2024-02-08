@@ -1,12 +1,14 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainPage from './MainPage';
 import Nav from './Nav';
-import AddSalesPerson from './AddSalespersonForm'
-import ListSalespeople from './ListSalespeople'
+import AddSalesPerson from './AddSalespersonForm';
+import ListSalespeople from './ListSalespeople';
 import ListInventory from './ListInventory';
 import AddVehicle from './AddVehicleForm';
-
-
+import AddCustomer from './AddCustomerForm';
+import ListCustomers from './ListCustomers';
+import ListSales from './ListAllSales';
+import AddSale from './AddSaleRecordForm';
 
 function App() {
   return (
@@ -19,10 +21,10 @@ function App() {
           <Route path='/automobiles/new' element={<AddVehicle />} />
           <Route path='/salesperson' element={<ListSalespeople />} />
           <Route path='/salesperson/new' element={<AddSalesPerson />} />
-          {/* <Route path='/customer' element={<ListCustomers />} /> */}
-          {/* <Route path='/customer/new' element={<AddCustomer />} />*/}
-          {/* <Route path='/sales' element={<ListSales />} /> */}
-          {/* <Route path='/sales/new' element={<AddSale />} */}
+          <Route path='/customers' element={<ListCustomers />} />
+          <Route path='/customers/new' element={<AddCustomer />} />
+          <Route path='/sales' element={<ListSales />} />
+          <Route path='/sales/new' element={<AddSale />} />
         </Routes>
       </div>
     </BrowserRouter>

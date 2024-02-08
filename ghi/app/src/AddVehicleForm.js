@@ -68,55 +68,57 @@ const AddVehicle= function() {
 
     return(
         <div className='row'>
-            <div className='shadow p-4 mt-4 mb-4' style={{backgroundColor: 'gray'}}>
-                <form id='add-sales-person' onSubmit={handleSubmit}> 
-                    <h1>Add a New Vehicle</h1>
-                    <div className="form-group mb-3">
-                        <label htmlFor='firstName'>Color</label>
-                        <input 
-                        onChange={handleColor}
-                        value={color}
-                        type='text'
-                        id='firstName'
-                        className='form-control'
-                        required
-                        />
-                    </div>
-                    <div className="form-group mb-3">
-                        <label htmlFor='lastName'>Year</label>
-                        <input 
-                        onChange={handleYear}
-                        value={year}
-                        type='text'
-                        id='lastName'
-                        className='form-control'
-                        required
-                        />
-                    </div>
-                    <div className="form-group mb-3">
-                        <label htmlFor='employeeID'>VIN</label>
-                        <input 
-                        onChange={handleVIN}
-                        value = {vin}
-                        type='text'
-                        id='employeeID'
-                        className='form-control'
-                        required
-                        />
-                    </div>
-                    <div className="form-group mb-3">
-                        <select onChange = {handleModelChoice} name='model' id='model_id'  required>
-                            <option value= ''>Choose Model</option>
-                            {models.map(model => {
-                                return (
-                                    <option key={model.id} value={model.id}>{model.name}</option>
-                                )
-                            })}
-                        </select>
+            <div className="offset-3 col-6">
+                <div className='shadow p-4 mt-4 mb-4' style={{backgroundColor: 'gray'}}>
+                    <form id='add-sales-person' onSubmit={handleSubmit}> 
+                        <h1>Add a New Vehicle</h1>
+                        <div className="form-group mb-3">
+                            <label htmlFor='color'>Color</label>
+                            <input 
+                            onChange={handleColor}
+                            value={color}
+                            type='text'
+                            id='color'
+                            className='form-control'
+                            required
+                            />
+                        </div>
+                        <div className="form-group mb-3">
+                            <label htmlFor='year'>Year</label>
+                            <input 
+                            onChange={handleYear}
+                            value={year}
+                            type='text'
+                            id='year'
+                            className='form-control'
+                            required
+                            />
+                        </div>
+                        <div className="form-group mb-3">
+                            <label htmlFor='vin'>VIN</label>
+                            <input 
+                            onChange={handleVIN}
+                            value = {vin}
+                            type='text'
+                            id='vin'
+                            className='form-control'
+                            required
+                            />
+                        </div>
+                        <div className="form-group mb-3">
+                            <select onChange = {handleModelChoice} name='model' id='model_id'  required>
+                                <option value= ''>Choose Model</option>
+                                {models.map(model => {
+                                    return (
+                                        <option key={model.id} value={model.id}>{model.name}</option>
+                                    )
+                                })}
+                            </select>
 
-                    </div>
-                    <button type='submit' className='btn btn-primary'>Submit</button>
-                </form>
+                        </div>
+                        <button type='submit' className='btn btn-primary'>Submit</button>
+                    </form>
+                </div>
             </div>
         </div>
     )

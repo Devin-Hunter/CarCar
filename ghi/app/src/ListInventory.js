@@ -1,15 +1,16 @@
-import React, {useState, useEffect} from "react"
+import React, {useState, useEffect} from "react";
+
 const ListInventory = function (){
-    const [inventory, setInventory] = useState([])
+    const [inventory, setInventory] = useState([]);
 
     const getInventory = async () =>{
         const url ='http://localhost:8100/api/automobiles/';
         const response = await fetch(url);
         if (response.ok){
             const data = await response.json();
-            const inventory = data.autos
+            const inventory = data.autos;
             
-            setInventory(inventory)
+            setInventory(inventory);
         }
     }
     useEffect(() =>{
@@ -17,7 +18,7 @@ const ListInventory = function (){
     }, []);
 
     return(
-        <>
+        <div className='p-4 mt-4 mb-4'>
             <h1>Inventory</h1>
             <div className="mb-4">
                 <table className="table table-dark table-striped mt-4 mb-4" >
@@ -48,7 +49,7 @@ const ListInventory = function (){
                 </table>
             </div>
             
-        </>
-    )
+        </div>
+    );
 }
-export default ListInventory
+export default ListInventory;

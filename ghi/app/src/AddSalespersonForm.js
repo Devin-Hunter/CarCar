@@ -47,44 +47,46 @@ const AddSalesPerson= function() {
 
     return(
         <div className='row'>
-            <div className='shadow p-4 mt-4 mb-4' style={{backgroundColor: 'gray'}}>
-                <form id='add-sales-person' onSubmit={handleSubmit}> 
-                    <h1>Add a New Sales Person</h1>
-                    <div className="form-group mb-3">
-                        <label htmlFor='firstName'>First Name</label>
-                        <input 
-                        onChange={handleFirstName}
-                        value={firstName}
-                        type='text'
-                        id='firstName'
-                        className='form-control'
-                        required
-                        />
-                    </div>
-                    <div className="form-group mb-3">
-                        <label htmlFor='lastName'>Last Name</label>
-                        <input 
-                        onChange={handleLastName}
-                        value={lastName}
-                        type='text'
-                        id='lastName'
-                        className='form-control'
-                        required
-                        />
-                    </div>
-                    <div className="form-group mb-3">
-                        <label htmlFor='employeeID'>Employee ID</label>
-                        <input 
-                        onChange={handleEmployeeID}
-                        value = {employeeID}
-                        type='text'
-                        id='employeeID'
-                        className='form-control'
-                        required
-                        />
-                    </div>
-                    <button type='submit' className='btn btn-primary'>Submit</button>
-                </form>
+            <div className="offset-3 col-6">
+                <div className='shadow p-4 mt-4 mb-4' style={{backgroundColor: 'gray'}}>
+                    <form id='add-sales-person' onSubmit={handleSubmit}> 
+                        <h1>Add a New Sales Person</h1>
+                        <div className="form-group mb-3">
+                            <label htmlFor='firstName'>First Name</label>
+                            <input 
+                            onChange={handleFirstName}
+                            value={firstName}
+                            type='text'
+                            id='firstName'
+                            className='form-control'
+                            required
+                            />
+                        </div>
+                        <div className="form-group mb-3">
+                            <label htmlFor='lastName'>Last Name</label>
+                            <input 
+                            onChange={handleLastName}
+                            value={lastName}
+                            type='text'
+                            id='lastName'
+                            className='form-control'
+                            required
+                            />
+                        </div>
+                        <div className="form-group mb-3">
+                            <label htmlFor='employeeID'>Employee ID</label>
+                            <input 
+                            onChange={handleEmployeeID}
+                            value = {employeeID}
+                            type='text'
+                            id='employeeID'
+                            className='form-control'
+                            required
+                            />
+                        </div>
+                        <button type='submit' className='btn btn-primary'>Submit</button>
+                    </form>
+                </div>
             </div>
         </div>
     )
