@@ -13,6 +13,7 @@ class TechnicianAdmin(admin.ModelAdmin):
 @admin.register(Appointment)
 class AppointmentAdmin(admin.ModelAdmin):
     list_display = [
+        "id",
         "date_time",
         "reason",
         "status",
@@ -26,4 +27,7 @@ class AutomobileVOAdmin(admin.ModelAdmin):
     list_display = [
         "vin",
         "sold",
+        "year",
+        "model",
+        "manufacturer",
     ]

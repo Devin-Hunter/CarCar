@@ -9,10 +9,16 @@ class Technician(models.Model):
     def get_api_url(self):
         return reverse("api_technician", kwargs={"pk": self.id})
 
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
+
 class Appointment(models.Model):
+
     date_time = models.DateTimeField()
     reason = models.CharField(max_length=200)
-    status = models.CharField(max_length=50)
+    status = models.CharField(
+        max_length=100,
+        default="Scheduled")
     vin = models.CharField(max_length=100)
     customer = models.CharField(max_length=200)
 
@@ -25,9 +31,16 @@ class Appointment(models.Model):
     def get_api_url(self):
         return reverse("api_appointments", kwargs={"pk": self.id})
 
+    class Meta:
+        ordering = ("date_time",) #ordering appointments by date & time
+
 class AutomobileVO(models.Model):
-    vin = models.CharField(max_length=100)
+    vin = models.CharField(max_length=17)
     sold = models.BooleanField(default=False)
+    year = models.PositiveSmallIntegerField()
+    model = models.CharField(max_length=100)
+    manufacturer = models.CharField(max_length=100)
+
 
     def __str__(self):
         return f"{self.vin}"

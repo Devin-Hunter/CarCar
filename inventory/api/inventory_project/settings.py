@@ -26,8 +26,6 @@ SECRET_KEY = 'django-insecure-h_*^s%*58o(szd%qaz!(^ky%nah+=yw+d=mkp_)01(r1@*$2t%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["inventory-api", "localhost"]
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -54,6 +52,7 @@ MIDDLEWARE = [
 ALLOWED_HOSTS = [
     "localhost",
     "project-beta-inventory-api-1",
+    "inventory-api",
 ]
 
 CSRF_TRUSTED_ORIGINS = [

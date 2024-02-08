@@ -11,6 +11,9 @@ class AutomobileVOEncoder(ModelEncoder):
     properties = [
         "vin",
         "sold",
+        "year",
+        "model",
+        "manufacturer",
     ]
 
 class TechnicianEncoder(ModelEncoder):
@@ -19,6 +22,7 @@ class TechnicianEncoder(ModelEncoder):
         "first_name",
         "last_name",
         "employee_id",
+        "id",
     ]
 
 class AppointmentEncoder(ModelEncoder):
@@ -160,4 +164,20 @@ def api_modify_appointments(request, pk):
         count, _ = Appointment.objects.filter(id=pk).delete()
         return JsonResponse({"deleted": count > 0})
     else:   #PUT(edit/update)
-        pass
+        content = json.loads(request.body)
+        try:
+            if "technician" in content:
+                tech = Technician.objects.get(employee_id=content["technician"])
+                content["technician"] = tech
+        except Technician.DoesNotExist:
+            return JsonResponse(
+                {"message": "Invalid Technician"},
+                status=400,
+            )
+        Appointment.objects.filter(id=pk).update(**content)
+        appointment = Appointment.objects.get(id=pk)
+        return JsonResponse(
+            appointment,
+            encoder=AppointmentEncoder,
+            safe=False,
+        )
