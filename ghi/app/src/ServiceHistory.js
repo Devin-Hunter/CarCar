@@ -3,16 +3,31 @@ import React from 'react';
 const ServiceHistory = (props) => {
 
     const appointments = props.appointments;
+    const cars = props.car;
 
     const handleSearch = (event) => {
         const value = value;
         return value;
     }
 
+    const handleVIP = (vin) => {
+        const checkVin = cars.map(car => {
+            const carVin = car.vin
+            return carVin
+        })
+        if (checkVin.includes(vin)) {
+            return "Yes"
+        } else {
+            return "No"
+        }
+    }
+
+
+
     return (
     <>
         <h1>Service History</h1>
-        <form onSubmit={handleSearch} id="search-vin-form" className="row g-3">
+        <form onSubmit={handleSearch} id="search-vin-form" className="row g-2">
             <div className='col-auto'>
 
             <input className="form-control" type="search" pattern={appointments.vin} list="datalistOptions" id="exampleDataList" placeholder="Vin search..." />
@@ -48,7 +63,7 @@ const ServiceHistory = (props) => {
                     <tr key={appt.id}>
                         <td>{ appt.vin }</td>
                         <td>{ appt.customer }</td>
-                        <td>No</td>
+                        <td>{handleVIP(appt.vin)}</td>
                         <td>{ new Date(appt.date_time).toDateString() }</td>
                         <td>{ new Date(appt.date_time).toTimeString().substring(0, 5) }</td>
                         <td>{ appt.technician.first_name } { appt.technician.last_name }</td>

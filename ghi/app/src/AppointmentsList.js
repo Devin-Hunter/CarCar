@@ -3,6 +3,7 @@ import React from 'react';
 export default function AppointmentsList(props) {
 
     const appointments = props.appointments;
+    const cars = props.car;
 
     const handleCancel = async (id) => {
 
@@ -50,6 +51,18 @@ export default function AppointmentsList(props) {
         }
     }
 
+    const handleVIP = (vin) => {
+        const checkVin = cars.map(car => {
+            const carVin = car.vin
+            return carVin
+        })
+        if (checkVin.includes(vin)) {
+            return "Yes"
+        } else {
+            return "No"
+        }
+    }
+
     return (
         <>
             <h1>Service Appointments</h1>
@@ -73,7 +86,7 @@ export default function AppointmentsList(props) {
                                 <tr key={appt.id}>
                                     <td>{ appt.vin }</td>
                                     <td>{ appt.customer }</td>
-                                    <td>No</td>
+                                    <td>{handleVIP(appt.vin)}</td>
                                     <td>{ new Date(appt.date_time).toDateString() }</td>
                                     <td>{ new Date(appt.date_time).toTimeString().substring(0, 5) }</td>
                                     <td>{ appt.technician.first_name } { appt.technician.last_name }</td>

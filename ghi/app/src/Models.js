@@ -90,7 +90,7 @@ export default function ModelsList(props) {
                                         <td className="col-md-2">{ mod.name }</td>
                                         <td className="col-md-2">{ mod.manufacturer.name }</td>
                                         <td className="col-md-2">
-                                            <img className="img-fluid" src={mod.picture_url} alt='Responsive image' ></img>
+                                            <img className="img-fluid" src={mod.picture_url} alt='There was an issue with this URL' ></img>
                                         </td>
                                     </tr>
                                 )
