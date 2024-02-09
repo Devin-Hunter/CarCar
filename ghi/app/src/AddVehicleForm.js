@@ -61,7 +61,7 @@ const AddVehicle= function() {
             setColor('');
             setYear('');
             setVIN('');
-            setModelChoice('');
+            setModelChoice(' ');
         }
     }
 
@@ -105,7 +105,7 @@ const AddVehicle= function() {
                             />
                         </div>
                         <div className="form-group mb-3">
-                            <select onChange = {handleModelChoice} name='model' id='model_id' className="form-select"  required>
+                            <select onChange = {handleModelChoice} value={modelChoice} name='model' id='model_id' className="form-select"  required>
                                 <option value= ''>Choose Model</option>
                                 {models.map(model => {
                                     return (

@@ -115,7 +115,7 @@ const AddSale = function (){
                     <form id='add-sales-record' onSubmit={handleSubmit}> 
                         <h1>Add a New Sale</h1>
                         <div className="form-group mb-3">
-                            <select onChange={handleVehicleChoice} name='vehicle' className="form-select" required>
+                            <select onChange={handleVehicleChoice} value={vehicleChoice} name='vehicle' className="form-select" required>
                                 <option value=''>Select a Vehicle</option>
                                 {vehicles.map(vehicle => {
                                     return(
@@ -125,7 +125,7 @@ const AddSale = function (){
                             </select>
                         </div>
                         <div className="form-group mb-3">
-                            <select onChange={handleSalespersonChoice} name='salesperson' className="form-select" required>
+                            <select onChange={handleSalespersonChoice} value={salespersonChoice} name='salesperson' className="form-select" required>
                                 <option value=''>Select a Salesperson</option>
                                 {salespeople.map(salesperson => {
                                     return(
@@ -135,7 +135,7 @@ const AddSale = function (){
                             </select>
                         </div>
                         <div className="form-group mb-3">
-                            <select onChange={handleCustomerChoice} name='customer' className="form-select" required>
+                            <select onChange={handleCustomerChoice} value={customerChoice} name='customer' className="form-select" required>
                                 <option value=''>Select a Customer</option>
                                 {customers.map(customer => {
                                     return(
