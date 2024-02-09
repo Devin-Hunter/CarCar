@@ -5,17 +5,21 @@ const ServiceHistory = (props) => {
     const appointments = props.appointments;
     const cars = props.car;
 
+    const soldCars = cars.map(car => {
+
+        if (car.sold === true) {
+            return car.vin
+        }
+    })
+
     const handleSearch = (event) => {
         const value = value;
         return value;
     }
 
     const handleVIP = (vin) => {
-        const checkVin = cars.map(car => {
-            const carVin = car.vin
-            return carVin
-        })
-        if (checkVin.includes(vin)) {
+
+        if (soldCars.includes(vin)) {
             return "Yes"
         } else {
             return "No"

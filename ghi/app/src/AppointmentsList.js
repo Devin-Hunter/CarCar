@@ -5,6 +5,22 @@ export default function AppointmentsList(props) {
     const appointments = props.appointments;
     const cars = props.car;
 
+    const soldCars = cars.map(car => {
+
+        if (car.sold === true) {
+            return car.vin
+        }
+    })
+
+    const handleVIP = (vin) => {
+
+        if (soldCars.includes(vin)) {
+            return "Yes"
+        } else {
+            return "No"
+        }
+    }
+
     const handleCancel = async (id) => {
 
         const url = `http://localhost:8081/api/appointments/${id}/`;
@@ -51,17 +67,7 @@ export default function AppointmentsList(props) {
         }
     }
 
-    const handleVIP = (vin) => {
-        const checkVin = cars.map(car => {
-            const carVin = car.vin
-            return carVin
-        })
-        if (checkVin.includes(vin)) {
-            return "Yes"
-        } else {
-            return "No"
-        }
-    }
+
 
     return (
         <>
