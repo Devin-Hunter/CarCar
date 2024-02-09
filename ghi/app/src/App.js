@@ -80,7 +80,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route className="services">
-            <Route path="/appointments" element={<AppointmentsList appointments={appointments} />} />
+            <Route path="/appointments" element={<AppointmentsList state={setAppointments} appointments={appointments} />} />
             <Route path="/servicehistory" element={<ServiceHistory appointments={appointments} />} />
             <Route path="/createappointment" element={<CreateAppointmentForm appointments={appointments} techs={technicians} car={car} />} />
           </Route>

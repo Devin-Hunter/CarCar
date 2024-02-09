@@ -5,7 +5,8 @@ const ServiceHistory = (props) => {
     const appointments = props.appointments;
 
     const handleSearch = (event) => {
-
+        const value = value;
+        return value;
     }
 
     return (
@@ -14,7 +15,7 @@ const ServiceHistory = (props) => {
         <form onSubmit={handleSearch} id="search-vin-form" className="row g-3">
             <div className='col-auto'>
 
-            <input className="form-control" list="datalistOptions" id="exampleDataList" placeholder="Vin search..." />
+            <input className="form-control" type="search" pattern={appointments.vin} list="datalistOptions" id="exampleDataList" placeholder="Vin search..." />
                 <datalist id="datalistOptions">
                     {appointments.map(appt => {
                         return (
@@ -22,6 +23,9 @@ const ServiceHistory = (props) => {
                         )
                     })}
                 </datalist>
+            </div>
+            <div className="col-auto">
+                <button type="submit" className="btn btn-primary">Search</button>
             </div>
         </form>
         <table className="table table-striped table-hover">
@@ -38,6 +42,7 @@ const ServiceHistory = (props) => {
                 </tr>
             </thead>
             <tbody>
+                {/* {if value from handleSearch matches vin in list, filter the list, else show all} */}
                 {appointments.map(appt => {
                 return (
                     <tr key={appt.id}>
