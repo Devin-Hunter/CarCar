@@ -22,6 +22,11 @@ How to run the project?
 
 Diagram of the Project:
 project diagram: (./img/CARCAR_Project_Diagram.png)
+![Project-Diagram](img/CARCAR_Project_Diagram.png)
+
+
+
+
 
 ## Inventory microservice
 Models:
