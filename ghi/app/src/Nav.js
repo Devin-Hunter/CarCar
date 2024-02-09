@@ -10,12 +10,14 @@ function Nav() {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavDarkDropdown">
           <ul className='navbar-nav'>
-            <li className='nav-item'>
+            
+            <li className='nav-item'> 
               <a className="nav-link" id='navbarDarkMenuLink' role="button" href='/manufacturers' aria-expanded="false" >Manufacturers</a>
             </li>
             <li className='nav-item'>
               <a className="nav-link" id='navbarDarkMenuLink' role="button" href='/models' aria-expanded="false" >Models</a>
             </li>
+
             <li className='nav-item dropdown'>
               <a className="nav-link dropdown-toggle" id='navbarDarkDropdownMenuLink' role="button" data-bs-toggle="dropdown" aria-expanded="false" >Inventory</a>
               <div className='dropdown-menu dropdown-menu-dark'>
@@ -30,6 +32,22 @@ function Nav() {
                 <a className='dropdown-item' href='/salesperson/new'>Add Salesperson</a>
               </div>
             </li>
+            <li className='nav-item dropdown'>
+              <a className="nav-link dropdown-toggle" id='navbarDarkDropdownMenuLink' role="button" data-bs-toggle="dropdown" aria-expanded="false" >Customers</a>
+              <div className='dropdown-menu dropdown-menu-dark'>
+                <a className='dropdown-item' href='/customers'>View Customers</a>
+                <a className='dropdown-item' href='/customers/new'>Add Customer</a>
+              </div>
+            </li>
+            <li className='nav-item dropdown'>
+              <a className="nav-link dropdown-toggle" id='navbarDarkDropdownMenuLink' role="button" data-bs-toggle="dropdown" aria-expanded="false" >Sales</a>
+              <div className='dropdown-menu dropdown-menu-dark'>
+                <a className='dropdown-item' href='/sales'>List Sales</a>
+                <a className='dropdown-item' href='/sales/employee'>Sales by Employee</a>
+                <a className='dropdown-item' href='/sales/new'>Add Sale</a>
+              </div>
+            </li>
+            
             <li className='nav-item dropdown'>
               <a className="nav-link dropdown-toggle" id='navbarDarkDropdownMenuLink' role="button" data-bs-toggle="dropdown" aria-expanded="false" >Services</a>
               <div className='dropdown-menu dropdown-menu-dark'>
@@ -47,12 +65,11 @@ function Nav() {
             </li>
 
           </ul>
-
+            
         </div>
       </div>
     </nav>
-
-  )
+  );
 }
 
 export default Nav;
