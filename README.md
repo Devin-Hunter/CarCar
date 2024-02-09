@@ -29,63 +29,69 @@ Diagram of the Project:
 
 
 ## Inventory microservice
-Models:
-    Manufacturer: This defines the name of a manufacturer.
+**Models:**
 
-    VehicleModel: Defines the model name, a picture, and a manufacturer for each instance. The picture must be a url and the manufacturer is a foreignkey to the Manufacturer model.
+Manufacturer: This defines the name of a manufacturer.
 
-    Automobile: Defines color, year, vin, sale status, and model for each instance. The vin is a unique identifier. the model is a foreign key to the VehicleModel model.
+VehicleModel: Defines the model name, a picture, and a manufacturer for each instance. The picture must be a url and the manufacturer is a foreignkey to the Manufacturer model.
 
-Insomnia endpoints:
-    Inventory:
-        GET: http://localhost:8100/api/automobiles/
-        POST: http://localhost:8100/api/automobiles/
-        PUT: http://localhost:8100/api/automobiles/<vin>
-        DELETE: http://localhost:8100/api/automobiles/<vin>
+Automobile: Defines color, year, vin, sale status, and model for each instance. The vin is a unique identifier. the model is a foreign key to the VehicleModel model.
 
-<!--
-        Post sample input:
-        {
-            "color":"Purple",
-            "year":"2010",
-            "vin":"1C3CC5FB2AN1273",
-            "model_id": 1
-        }
--->
+### URLS/Insomnia endpoints:
+**Automobiles:**
+* GET: "http://localhost:8100/api/automobiles/"
+* POST: "http://localhost:8100/api/automobiles/"
+* PUT: "http://localhost:8100/api/automobiles/<vin>/"
+* DELETE: "http://localhost:8100/api/automobiles/<vin>/"
 
-    Models:
-        GET: http://localhost:8100/api/models/
-        POST: http://localhost:8100/api/models/
-<!--
-        POST sample input:
-        {
-            "name":"Mustang",
-            "picture_url": "https://www.pexels.com/photo/blue-ford-mustang-in-car-park-10905506/",
-            "manufacturer_id": 2
-        }
--->
+```
+Post sample input:
 
-    Manufacturers:
-        GET: http://localhost:8100/api/manufacturers/
-        POST:http://localhost:8100/api/manufacturers/
-<!--
+{
+    "color":"Purple",
+    "year":"2010",
+    "vin":"1C3CC5FB2AN1273",
+    "model_id": 1
+}
+```
+
+
+**Models:**
+* GET: "http://localhost:8100/api/models/"
+* POST: "http://localhost:8100/api/models/"
+
+```
+POST sample input:
+
+{
+    "name":"Mustang",
+    "picture_url": "https://www.pexels.com/photo/blue-ford-mustang-in-car-park-10905506/",
+    "manufacturer_id": 2
+}
+```
+
+**Manufacturers:**
+* GET: http://localhost:8100/api/manufacturers/
+* POST:http://localhost:8100/api/manufacturers/
+
+```
         POST sample input:
         {
             "name": "Ford"
         }
--->
+```
 
 
-Front end paths:
-    Inventory:
-        List inventory: http://localhost:3000/automobiles
-        Add to inventory: http://localhost:3000/automobiles/new
+**Front end paths:**
+Inventory:
+    * List inventory: http://localhost:3000/automobiles
+    * Add to inventory: http://localhost:3000/automobiles/new
 
-    Models:
-        List or Add Model: http://localhost:3000/models
+Models:
+    * List or Add Model: http://localhost:3000/models
 
-    Manufacturers:
-        List or Add Manufacturer: http://localhost:3000/manufacturers
+Manufacturers:
+    * List or Add Manufacturer: http://localhost:3000/manufacturers
 
 ## Services microservice
 
@@ -100,7 +106,7 @@ The AutomobileVO Model is a Value Object that pulls the automobile data from the
 Service-API Port: 8081
 
 
-### URLS:
+### URLS/Insomnia Endpoints:
 
 **Appointments URLs**
 
@@ -108,6 +114,15 @@ Service-API Port: 8081
 * POST (Create New Appointment): "http://localhost:8081/api/appointments/"
 * PUT (Edit Existing Appointment): "http://localhost:8081/api/appointments/<int:pk>/"
 * DELETE (Delete Appointment from Database): "http://localhost:8081/api/appointments/<int:pk>/"
+
+
+**Technician URLs**
+
+* GET (List View): "http://localhost:8081/api/technicians/"
+* POST (Create New Technician): "http://localhost:8081/api/technicians/"
+* DELETE (Delete Technician from Database): "http://localhost:8081/api/appointments/<int:pk>/"
+
+
 
 ```
 Example Template to Create a New Appointment in Insomnia
@@ -141,30 +156,26 @@ Insomnia Response
 
 ```
 
-**Technician URLs**
 
-* GET (List View): "http://localhost:8081/api/technicians/"
-* POST (Create New Technician): "http://localhost:8081/api/technicians/"
-* DELETE (Delete Technician from Database): "http://localhost:8081/api/appointments/<int:pk>/"
 
 ```
 Example Template to Create a New Technician in Insomnia
 
 {
-	"first_name": "Santa",
-	"last_name": "Claus",
-	"employee_id": "sclaus"
+"first_name": "Santa",
+"last_name": "Claus",
+"employee_id": "sclaus"
 }
 
 Insomnia Response
 
 {
-	"tech": {
-		"first_name": "Santa",
-		"last_name": "Claus",
-		"employee_id": "sclaus",
-		"id": 6
-	}
+"tech": {
+    "first_name": "Santa",
+    "last_name": "Claus",
+    "employee_id": "sclaus",
+    "id": 6
+}
 }
 
 ```
