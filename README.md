@@ -113,30 +113,30 @@ Service-API Port: 8081
 Example Template to Create a New Appointment in Insomnia
 
 {
-	"date_time": "2024-02-18 12:00",
-	"vin": "2D4RN4DG9BR787100",
-	"customer": "Ann Perkins",
-	"technician": "jdoe",
-	"reason": "Oil Change"
+"date_time": "2024-02-18 12:00",
+"vin": "2D4RN4DG9BR787100",
+"customer": "Ann Perkins",
+"technician": "jdoe",
+"reason": "Oil Change"
 }
 
 Insomnia Response
 
 {
-	"appointment": {
-		"id": 5,
-		"date_time": "2024-02-18 12:00",
-		"reason": "Oil Change",
-		"status": "Scheduled",
-		"vin": "2D4RN4DG9BR787100",
-		"customer": "Ann Perkins",
-		"technician": {
-			"first_name": "John",
-			"last_name": "Doe",
-			"employee_id": "jdoe",
-			"id": 3
-		}
-	}
+"appointment": {
+    "id": 5,
+    "date_time": "2024-02-18 12:00",
+    "reason": "Oil Change",
+    "status": "Scheduled",
+    "vin": "2D4RN4DG9BR787100",
+    "customer": "Ann Perkins",
+    "technician": {
+        "first_name": "John",
+        "last_name": "Doe",
+        "employee_id": "jdoe",
+        "id": 3
+    }
+}
 }
 
 ```
