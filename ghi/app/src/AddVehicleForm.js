@@ -3,8 +3,8 @@ const AddVehicle= function() {
     const [color, setColor] = useState('');
     const [year, setYear] = useState('');
     const [vin, setVIN] = useState('');
-    const [models, setModels] = useState([])
-    const [modelChoice, setModelChoice]= useState('')
+    const [models, setModels] = useState([]);
+    const [modelChoice, setModelChoice]= useState('');
 
     const handleColor = (event) => {
         const value = event.target.value;
@@ -31,7 +31,7 @@ const AddVehicle= function() {
         const response = await fetch(url);
         if (response.ok) {
             const data = await response.json();
-            setModels(data.models)
+            setModels(data.models);
         }
     } 
 
@@ -61,8 +61,7 @@ const AddVehicle= function() {
             setColor('');
             setYear('');
             setVIN('');
-            setModelChoice('')
-            console.log('submitted')
+            setModelChoice('');
         }
     }
 
@@ -106,7 +105,7 @@ const AddVehicle= function() {
                             />
                         </div>
                         <div className="form-group mb-3">
-                            <select onChange = {handleModelChoice} name='model' id='model_id'  required>
+                            <select onChange = {handleModelChoice} name='model' id='model_id' className="form-select"  required>
                                 <option value= ''>Choose Model</option>
                                 {models.map(model => {
                                     return (
@@ -123,4 +122,4 @@ const AddVehicle= function() {
         </div>
     )
 }
-export default AddVehicle
+export default AddVehicle;

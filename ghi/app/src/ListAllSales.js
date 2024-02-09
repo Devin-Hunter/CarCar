@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 
 
 const ListSales = function (){
-    const [sales, setSales] = useState([]); //list of all sale objects
+    const [sales, setSales] = useState([]);
 
     const getSales = async () =>{
         const url ='http://localhost:8090/api/sales/';
@@ -10,12 +10,9 @@ const ListSales = function (){
         if (response.ok){
             const data = await response.json();
             const sales = data.sales;
-            console.log('sales', sales);
             setSales(sales);
         }
-    }
-    
-      
+    }  
     useEffect(() =>{
         getSales();
     }, []);
@@ -49,9 +46,7 @@ const ListSales = function (){
                     </tbody>
                 </table>
             </div>
-            
         </div>
     );
-    
 }
 export default ListSales;

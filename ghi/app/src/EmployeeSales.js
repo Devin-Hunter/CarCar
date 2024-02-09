@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from "react"
 
 const ListEmployeeSales = function (){
-    const [sales, setSales] = useState([]); //list of all sale objects
-    const [filter, setFilter] =useState([]); //list of all salespeople
-    const [employeeChoice, setEmployeeChoice] = useState(''); //chosen employee_id
+    const [sales, setSales] = useState([]); 
+    const [filter, setFilter] =useState([]); 
+    const [employeeChoice, setEmployeeChoice] = useState(''); 
 
     const getSales = async () =>{
         const url ='http://localhost:8090/api/sales/';
@@ -11,7 +11,6 @@ const ListEmployeeSales = function (){
         if (response.ok){
             const data = await response.json();
             const sales = data.sales;
-            console.log('sales', sales);
             setSales(sales);
         }
     }
@@ -22,7 +21,6 @@ const ListEmployeeSales = function (){
             const data = await response.json();
             const salespeople = data.salespeople;
             setFilter(salespeople);
-            console.log('salespeople', salespeople)
         }
     }
     useEffect(() =>{
@@ -32,8 +30,7 @@ const ListEmployeeSales = function (){
 
     const handleEmployeeChoice = (event) => {
         const value = event.target.value;
-        console.log('employee choice', value)
-        setEmployeeChoice(value)
+        setEmployeeChoice(value);
     }
 
     return(
@@ -41,7 +38,7 @@ const ListEmployeeSales = function (){
             <h1>Sales by Employee</h1>
             <div className="mb-4">
                 <div>
-                    <select onChange ={handleEmployeeChoice} value={employeeChoice} id="employee_id">
+                    <select onChange ={handleEmployeeChoice} value={employeeChoice} id="employee_id" className="form-select"  >
                         <option>Choose an employee</option>
                         {filter.map(employee =>{
                             return(
@@ -50,7 +47,6 @@ const ListEmployeeSales = function (){
                         })}
                     </select>
                 </div>
-                {/* <Table sales = {sales} /> */}
                 <table className="table table-dark table-striped mt-4 mb-4" >
                     <thead>
                         <tr>
@@ -77,7 +73,6 @@ const ListEmployeeSales = function (){
                     </tbody>
                 </table>
             </div>
-            
         </div>
     );
     
