@@ -21,7 +21,7 @@ const AddSale = function (){
             if (vehicleResponse.ok) {
                 const vehicleData = await vehicleResponse.json();
                 const vehicles = vehicleData.autos.filter(vehicle => vehicle.sold === false); 
-                console.log(vehicleData);
+                
                 setVehicles(vehicles);
             }
 
@@ -58,7 +58,7 @@ const AddSale = function (){
 
     const handleSalespersonChoice = (event) => {
         const value = event.target.value;
-        setSalespersonChoice(value)
+        setSalespersonChoice(value);
     }
 
     const handleCustomerChoice = (event) => {
@@ -74,7 +74,7 @@ const AddSale = function (){
         data.customer = customerChoice;
         data.automobile = vehicleChoice;
         
-        console.log(data)
+        
 
         const autoUrl = `http://localhost:8100/api/automobiles/${vehicleChoice}/`
         const update = {"sold": true}
@@ -87,7 +87,7 @@ const AddSale = function (){
         }
         const autoUpdate = await fetch(autoUrl, autoFetchOptions)
         if (autoUpdate.okay){
-            console.log('success!')
+            
         }
 
         const url = 'http://localhost:8090/api/sales/'
@@ -115,7 +115,7 @@ const AddSale = function (){
                     <form id='add-sales-record' onSubmit={handleSubmit}> 
                         <h1>Add a New Sale</h1>
                         <div className="form-group mb-3">
-                            <select onChange={handleVehicleChoice} name='vehicle'>
+                            <select onChange={handleVehicleChoice} name='vehicle' className="form-select" required>
                                 <option value=''>Select a Vehicle</option>
                                 {vehicles.map(vehicle => {
                                     return(
@@ -125,7 +125,7 @@ const AddSale = function (){
                             </select>
                         </div>
                         <div className="form-group mb-3">
-                            <select onChange={handleSalespersonChoice} name='salesperson'>
+                            <select onChange={handleSalespersonChoice} name='salesperson' className="form-select" required>
                                 <option value=''>Select a Salesperson</option>
                                 {salespeople.map(salesperson => {
                                     return(
@@ -135,7 +135,7 @@ const AddSale = function (){
                             </select>
                         </div>
                         <div className="form-group mb-3">
-                            <select onChange={handleCustomerChoice} name='customer'>
+                            <select onChange={handleCustomerChoice} name='customer' className="form-select" required>
                                 <option value=''>Select a Customer</option>
                                 {customers.map(customer => {
                                     return(
