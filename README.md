@@ -38,7 +38,7 @@ Diagram of the Project:
 **Automobile:** Defines color, year, vin, sale status, and model for each instance. The vin is a unique identifier. the model is a foreign key to the VehicleModel model.
 
 ### URLS/Insomnia endpoints
-#### Automobiles:
+##### Automobiles:
 * GET: "http://localhost:8100/api/automobiles/"
 * POST: "http://localhost:8100/api/automobiles/"
 * PUT: "http://localhost:8100/api/automobiles/<vin>/"
@@ -56,7 +56,7 @@ Post sample input:
 ```
 
 
-**Models:**
+##### Models:
 * GET: "http://localhost:8100/api/models/"
 * POST: "http://localhost:8100/api/models/"
 
@@ -70,7 +70,7 @@ POST sample input:
 }
 ```
 
-**Manufacturers:**
+##### Manufacturers:
 * GET: http://localhost:8100/api/manufacturers/
 * POST:http://localhost:8100/api/manufacturers/
 
@@ -83,15 +83,18 @@ POST sample input:
 
 
 ### Front end paths
-**Inventory:**
+#####Inventory:
 * List inventory: http://localhost:3000/automobiles
 * Add to inventory: http://localhost:3000/automobiles/new
 
-**Models:**
+##### Models:
 * List or Add Model: http://localhost:3000/models
 
-**Manufacturers:**
+##### Manufacturers:
 * List or Add Manufacturer: http://localhost:3000/manufacturers
+
+
+
 
 ## Services microservice
 
