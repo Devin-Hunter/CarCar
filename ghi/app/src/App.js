@@ -96,7 +96,7 @@ function App() {
           <Route path='/sales' element={<ListSales />} />
           <Route path='/sales/employee' element={<ListEmployeeSales />} />
           <Route path='/sales/new' element={<AddSale />} />
-          
+
           <Route className="services">
             <Route path="/appointments" element={<AppointmentsList getAppointments={getAppointments} appointments={appointments} car={car} />} />
             <Route path="/servicehistory" element={<ServiceHistory appointments={appointments} car={car} />} />

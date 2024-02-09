@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 const ServiceHistory = (props) => {
+
+    const [search, setSearch] = useState('');
 
     const appointments = props.appointments;
     const cars = props.car;
@@ -12,11 +14,14 @@ const ServiceHistory = (props) => {
         }
     })
 
+
     const handleSearch = (event) => {
         event.preventDefault();
         const value = event.target.value;
-        console.log(value);
+        setSearch(value);
     }
+
+
 
     const handleVIP = (vin) => {
 
@@ -28,23 +33,35 @@ const ServiceHistory = (props) => {
     }
 
 
+    const filteredAppts = appointments.filter(apps => {
+        if (search === '') {
+            return apps
+        } else {
+            let filtered = Object.keys(apps).map(function(key) {
+                return apps[key];
+            });
+            if (filtered.includes(search)) {
+                return filtered
+            }
+
+        }
+    })
+
+
 
     return (
     <>
         <nav className="navbar navbar-light my-1">
             <div className="container-fluid">
                 <span className="navbar-brand mb-0 h1 fs-1">Service History</span>
-                <form className="d-lg-flex">
-                    <input className="form-control me-2" type="search" pattern={appointments.vin} list="datalistOptions" id="exampleDataList" placeholder="Vin search..." />
-                        <datalist id="datalistOptions">
-                            {appointments.map(appt => {
-                                return (
-                                    <option key={appt.id} value={appt.vin}>{appt.vin}</option>
-                                )
-                            })}
-                        </datalist>
-                        <button type="submit" className="btn btn-primary">Search</button>
-                </form>
+                <input className="form-control me-2" onChange={handleSearch}  type="search" pattern={appointments.vin} list="datalistOptions" id="exampleDataList" placeholder="Vin search..." />
+                    <datalist id="datalistOptions">
+                        {appointments.map(appt => {
+                            return (
+                                <option key={appt.id} value={appt.vin}>{appt.vin}</option>
+                            )
+                        })}
+                    </datalist>
             </div>
         </nav>
         <table className="table table-striped table-hover my-4">
@@ -61,19 +78,18 @@ const ServiceHistory = (props) => {
                 </tr>
             </thead>
             <tbody>
-                {/* {if value from handleSearch matches vin in list, filter the list, else show all} */}
-                {appointments.map(appt => {
-                return (
-                    <tr key={appt.id}>
-                        <td>{ appt.vin }</td>
-                        <td>{ appt.customer }</td>
-                        <td>{handleVIP(appt.vin)}</td>
-                        <td>{ new Date(appt.date_time).toDateString() }</td>
-                        <td>{ new Date(appt.date_time).toTimeString().substring(0, 5) }</td>
-                        <td>{ appt.technician.first_name } { appt.technician.last_name }</td>
-                        <td>{ appt.reason }</td>
-                        <td>{ appt.status }</td>
-                    </tr>
+                {filteredAppts.map(appt => {
+                    return (
+                        <tr key={appt.id}>
+                            <td>{ appt.vin }</td>
+                            <td>{ appt.customer }</td>
+                            <td>{handleVIP(appt.vin)}</td>
+                            <td>{ new Date(appt.date_time).toDateString() }</td>
+                            <td>{ new Date(appt.date_time).toTimeString().substring(0, 5) }</td>
+                            <td>{ appt.technician.first_name } { appt.technician.last_name }</td>
+                            <td>{ appt.reason }</td>
+                            <td>{ appt.status }</td>
+                        </tr>
                 )})}
             </tbody>
         </table>
@@ -81,4 +97,4 @@ const ServiceHistory = (props) => {
     )
 }
 
-export default ServiceHistory
+export default ServiceHistory;
