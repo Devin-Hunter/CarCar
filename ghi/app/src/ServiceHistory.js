@@ -13,8 +13,9 @@ const ServiceHistory = (props) => {
     })
 
     const handleSearch = (event) => {
-        const value = value;
-        return value;
+        event.preventDefault();
+        const value = event.target.value;
+        console.log(value);
     }
 
     const handleVIP = (vin) => {
@@ -30,24 +31,23 @@ const ServiceHistory = (props) => {
 
     return (
     <>
-        <h1>Service History</h1>
-        <form onSubmit={handleSearch} id="search-vin-form" className="row g-2">
-            <div className='col-auto'>
-
-            <input className="form-control" type="search" pattern={appointments.vin} list="datalistOptions" id="exampleDataList" placeholder="Vin search..." />
-                <datalist id="datalistOptions">
-                    {appointments.map(appt => {
-                        return (
-                            <option key={appt.id} value={appt.vin}>{appt.vin}</option>
-                        )
-                    })}
-                </datalist>
+        <nav className="navbar navbar-light my-1">
+            <div className="container-fluid">
+                <span className="navbar-brand mb-0 h1 fs-1">Service History</span>
+                <form className="d-lg-flex">
+                    <input className="form-control me-2" type="search" pattern={appointments.vin} list="datalistOptions" id="exampleDataList" placeholder="Vin search..." />
+                        <datalist id="datalistOptions">
+                            {appointments.map(appt => {
+                                return (
+                                    <option key={appt.id} value={appt.vin}>{appt.vin}</option>
+                                )
+                            })}
+                        </datalist>
+                        <button type="submit" className="btn btn-primary">Search</button>
+                </form>
             </div>
-            <div className="col-auto">
-                <button type="submit" className="btn btn-primary">Search</button>
-            </div>
-        </form>
-        <table className="table table-striped table-hover">
+        </nav>
+        <table className="table table-striped table-hover my-4">
             <thead>
                 <tr>
                     <th>VIN</th>

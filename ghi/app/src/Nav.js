@@ -33,8 +33,8 @@ function Nav() {
             <li className='nav-item dropdown'>
               <a className="nav-link dropdown-toggle" id='navbarDarkDropdownMenuLink' role="button" data-bs-toggle="dropdown" aria-expanded="false" >Services</a>
               <div className='dropdown-menu dropdown-menu-dark'>
-                <a className='dropdown-item' href='/appointments'>Service Appointments</a>
-                <a className='dropdown-item' href='/createappointment'>Create Service Appointment</a>
+                <a className='dropdown-item' href='/appointments'>Appointments</a>
+                <a className='dropdown-item' href='/createappointment'>Create Appointment</a>
                 <a className='dropdown-item' href='/servicehistory'>Service History</a>
               </div>
             </li>

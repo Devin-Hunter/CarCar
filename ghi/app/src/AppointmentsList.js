@@ -4,6 +4,7 @@ export default function AppointmentsList(props) {
 
     const appointments = props.appointments;
     const cars = props.car;
+    const resetState = props.getAppointments;
 
     const soldCars = cars.map(car => {
 
@@ -39,8 +40,7 @@ export default function AppointmentsList(props) {
         if (!response.ok) {
             throw new Error ('Bad fetch response while updating Status');
         } else {
-
-            window.location.href = "/appointments"
+            resetState();
         }
     }
 
@@ -62,8 +62,7 @@ export default function AppointmentsList(props) {
         if (!response.ok) {
             throw new Error ('Bad fetch response while updating Status');
         } else {
-
-            window.location.href = "/appointments"
+            resetState();
         }
     }
 
@@ -71,7 +70,7 @@ export default function AppointmentsList(props) {
 
     return (
         <>
-            <h1>Service Appointments</h1>
+            <h1>Appointments</h1>
             <table className="table table-striped table-hover">
                 <thead>
                     <tr>
