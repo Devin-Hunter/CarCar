@@ -38,7 +38,7 @@ Diagram of the Project:
 **Automobile:** Defines color, year, vin, sale status, and model for each instance. The vin is a unique identifier. the model is a foreign key to the VehicleModel model.
 
 ### URLS/Insomnia endpoints
-### **Automobiles:**
+#### Automobiles:
 * GET: "http://localhost:8100/api/automobiles/"
 * POST: "http://localhost:8100/api/automobiles/"
 * PUT: "http://localhost:8100/api/automobiles/<vin>/"
