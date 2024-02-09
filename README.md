@@ -106,7 +106,7 @@ Appointments URLs
     GET (List View): "http://localhost:8081/api/appointments"
     POST (Create New Appointment): "http://localhost:8081/api/appointments/"
     PUT (Edit Existing Appointment): "http://localhost:8081/api/appointments/<int:pk>/"
-    DELETE (Delete Appointment from Database): "http://localhost:8081/api/appointments/<int:pk>/"
+    DELETE (Delete Appointment from Database): "http://localhost:8081/api/appointments/<int:pk>/"  
 
 ```
 Example Template to Create a New Appointment in Insomnia
