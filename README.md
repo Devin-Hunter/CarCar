@@ -1,11 +1,11 @@
 # CarCar
 
-Team:
+## Team
 
 * Person 1 - Devin Matherne: Automobile Service
 * Person 2 - Krystin Gonzales: Automobile Sales
 
-## Design
+# Design
 CarCar is comprised of three microservices, Inventory, Service, and Sales. Service and Sales each interact with Inventory to execute their features.
 
 How to run the project?
@@ -28,8 +28,8 @@ Diagram of the Project:
 
 
 
-## Inventory microservice
-### Models
+# Inventory microservice
+## Models
 
 **Manufacturer:** This defines the name of a manufacturer.
 
@@ -37,7 +37,7 @@ Diagram of the Project:
 
 **Automobile:** Defines color, year, vin, sale status, and model for each instance. The vin is a unique identifier. the model is a foreign key to the VehicleModel model.
 
-### URLS/Insomnia endpoints
+## URLS/Insomnia endpoints
 ##### Automobiles:
 * GET: "http://localhost:8100/api/automobiles/"
 * POST: "http://localhost:8100/api/automobiles/"
@@ -75,15 +75,16 @@ POST sample input:
 * POST:http://localhost:8100/api/manufacturers/
 
 ```
-        POST sample input:
-        {
-            "name": "Ford"
-        }
+POST sample input:
+
+{
+    "name": "Ford"
+}
 ```
 
 
-### Front end paths
-#####Inventory:
+## Front end paths
+##### Inventory:
 * List inventory: http://localhost:3000/automobiles
 * Add to inventory: http://localhost:3000/automobiles/new
 
