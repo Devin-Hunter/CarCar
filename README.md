@@ -87,7 +87,7 @@ Front end paths:
     Manufacturers:
         List or Add Manufacturer: http://localhost:3000/manufacturers
 
-**Service microservice**
+## Services microservice
 
 Service Microservice has 3 models: Technician, Appointment, and AutomobileVO.
 
@@ -95,18 +95,18 @@ The Appointment Model uses the information from the other two models to view, ed
 
 The AutomobileVO Model is a Value Object that pulls the automobile data from the inventory with a poller. The poller will automatically gather information from the inventory database every 60 seconds. This data is then used to verify if a car that is scheduled for service was purchased from this dealership so those customers can receive special VIP treatment.
 
-# Ports:
+### Ports:
 
 Service-API Port: 8081
 
 
-# URLS:
+### URLS:
 
------Appointments URLs-----
-GET (List View): "http://localhost:8081/api/appointments"
-POST (Create New Appointment): "http://localhost:8081/api/appointments/"
-PUT (Edit Existing Appointment): "http://localhost:8081/api/appointments/<int:pk>/"
-DELETE (Delete Appointment from Database): "http://localhost:8081/api/appointments/<int:pk>/"
+    Appointments URLs
+        GET (List View): "http://localhost:8081/api/appointments"
+        POST (Create New Appointment): "http://localhost:8081/api/appointments/"
+        PUT (Edit Existing Appointment): "http://localhost:8081/api/appointments/<int:pk>/"
+        DELETE (Delete Appointment from Database): "http://localhost:8081/api/appointments/<int:pk>/"
 
 ```
 Example Template to Create a New Appointment in Insomnia
@@ -140,10 +140,10 @@ Insomnia Response
 
 ```
 
------Technician URLs-----
-GET (List View): "http://localhost:8081/api/technicians/"
-POST (Create New Technician): "http://localhost:8081/api/technicians/"
-DELETE (Delete Technician from Database): "http://localhost:8081/api/appointments/<int:pk>/"
+    Technician URLs
+        GET (List View): "http://localhost:8081/api/technicians/"
+        POST (Create New Technician): "http://localhost:8081/api/technicians/"
+        DELETE (Delete Technician from Database): "http://localhost:8081/api/appointments/<int:pk>/"
 
 ```
 Example Template to Create a New Technician in Insomnia
