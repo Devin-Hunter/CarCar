@@ -29,13 +29,13 @@ Diagram of the Project:
 
 
 ## Inventory microservice
-**Models:**
+### Models:
 
-Manufacturer: This defines the name of a manufacturer.
+**Manufacturer:** This defines the name of a manufacturer.
 
-VehicleModel: Defines the model name, a picture, and a manufacturer for each instance. The picture must be a url and the manufacturer is a foreignkey to the Manufacturer model.
+**VehicleModel:** Defines the model name, a picture, and a manufacturer for each instance. The picture must be a url and the manufacturer is a foreignkey to the Manufacturer model.
 
-Automobile: Defines color, year, vin, sale status, and model for each instance. The vin is a unique identifier. the model is a foreign key to the VehicleModel model.
+**Automobile:** Defines color, year, vin, sale status, and model for each instance. The vin is a unique identifier. the model is a foreign key to the VehicleModel model.
 
 ### URLS/Insomnia endpoints:
 **Automobiles:**
