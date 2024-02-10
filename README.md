@@ -100,11 +100,11 @@ POST sample input:
 
 Service Microservice has 3 models: *Technician, Appointment, and AutomobileVO.*
 
-1. *Technician Model:* Defines a technician as thier first and last name and a unique employee ID.
+1. **Technician Model:** Defines a technician as thier first and last name and a unique employee ID.
 
-2. *Appointment Model:* Uses the information from the other two models to view, edit, delete, and create new service appointments.
+2. **Appointment Model:** Uses the information from the other two models to view, edit, delete, and create new service appointments.
 
-3. *AutomobileVO Model:* A Value Object that pulls the automobile data from the inventory with a poller. The poller will automatically gather information from the inventory database every 60 seconds. This data is then used to verify if a car that is scheduled for service was purchased from this dealership so those customers can receive special VIP treatment.
+3. **AutomobileVO Model:** A Value Object that pulls the automobile data from the inventory with a poller. The poller will automatically gather information from the inventory database every 60 seconds. This data is then used to verify if a car that is scheduled for service was purchased from this dealership so those customers can receive special VIP treatment.
 
 ### Ports:
 
