@@ -9,15 +9,13 @@
 CarCar is comprised of three microservices, Inventory, Service, and Sales. Service and Sales each interact with Inventory to execute their features.
 
 How to run the project?
- - clone repository to local machine
-    in terminal:
-        `git clone <<repository_url>>`
- - build and run using Docker
-    in terminal:
-        `docker volume create beta-data`
-        `docker compose build`
-        --wait for build to complete--
-        `docker compose up`
+1. clone repository to local machine in terminal:
+* `git clone <<repository_url>>`
+2. build and run using Docker in terminal:
+* `docker volume create beta-data`
+* `docker compose build`
+3. wait for build to complete
+* `docker compose up`
  - After all docker containers are running the project can be viewed on http://localhost:3000
 
 Diagram of the Project:
