@@ -38,10 +38,10 @@ After all docker containers are running the project can be viewed on http://loca
 
 ### URLS/Insomnia endpoints
 ##### Automobiles:
-* GET: "http://localhost:8100/api/automobiles/"
-* POST: "http://localhost:8100/api/automobiles/"
-* PUT: ht<span>tp://localhost:8100/api/automobiles/<vin>/
-* DELETE: ht<span>tp://localhost:8100/api/automobiles/<vin>/
+* GET: http://localhost:8100/api/automobiles/
+* POST: http://localhost:8100/api/automobiles/
+* PUT: http://localhost:8100/api/automobiles/<vin>/
+* DELETE: http://localhost:8100/api/automobiles/<vin>/
 
 ```
 Post sample input:
@@ -56,8 +56,8 @@ Post sample input:
 
 
 ##### Models:
-* GET: "http://localhost:8100/api/models/"
-* POST: "http://localhost:8100/api/models/"
+* GET: http://localhost:8100/api/models/
+* POST: http://localhost:8100/api/models/
 
 ```
 POST sample input:
@@ -115,17 +115,17 @@ Service-API Port: 8081
 
 **Appointments URLs**
 
-* GET (List View): "http://localhost:8081/api/appointments"
-* POST (Create New Appointment): "http://localhost:8081/api/appointments/"
-* PUT (Edit Existing Appointment): ht<span>tp://localhost:8081/api/appointments/<int:pk>/
-* DELETE (Delete Appointment from Database): ht<span>tp://localhost:8081/api/appointments/<int:pk>/
+* GET (List View): http://localhost:8081/api/appointments
+* POST (Create New Appointment): http://localhost:8081/api/appointments/
+* PUT (Edit Existing Appointment): http://localhost:8081/api/appointments/<int:pk>/
+* DELETE (Delete Appointment from Database): http://localhost:8081/api/appointments/<int:pk>/
 
 
 **Technician URLs**
 
-* GET (List View): "http://localhost:8081/api/technicians/"
-* POST (Create New Technician): "http://localhost:8081/api/technicians/"
-* DELETE (Delete Technician from Database): ht<span>tp://localhost:8081/api/appointments/<int:pk>/
+* GET (List View): http://localhost:8081/api/technicians/
+* POST (Create New Technician): http://localhost:8081/api/technicians/
+* DELETE (Delete Technician from Database): http://localhost:8081/api/appointments/<int:pk>/
 
 
 
@@ -202,9 +202,9 @@ There are 4 models for the Sales microservice:
 ### URLS/Insomnia endpoints:
 
 ##### Salesperson:
-* GET = "http://localhost:8090/api/salespeople/"
-* POST = "http://localhost:8090/api/salespeople/"
-* DELETE = ht<span>tp://localhost:8090/api/salespeople/<int:pk>/
+* GET = http://localhost:8090/api/salespeople/
+* POST = http://localhost:8090/api/salespeople/
+* DELETE = http://localhost:8090/api/salespeople/<int:pk>/
 
 ```
 Sample JSON for POST:
