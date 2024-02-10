@@ -6,7 +6,7 @@
 * Person 2 - Krystin Gonzales: Automobile Sales
 
 ### Design
-CarCar is comprised of three microservices, Inventory, Service, and Sales. Service and Sales each interact with Inventory to execute their features.
+CarCar is comprised of three microservices: *Inventory, Service, and Sales.* Service and Sales each interact with Inventory to execute their features.
 
 How to run the project?
 1. clone repository to local machine in terminal:
