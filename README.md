@@ -30,11 +30,11 @@ After all docker containers are running the project can be viewed on http://loca
 # Inventory microservice
 ### Models
 
-**Manufacturer:** This defines the name of a manufacturer.
+1. **Manufacturer:** This defines the name of a manufacturer.
 
-**VehicleModel:** Defines the model name, a picture, and a manufacturer for each instance. The picture must be a url and the manufacturer is a foreignkey to the Manufacturer model.
+2. **VehicleModel:** Defines the model name, a picture, and a manufacturer for each instance. The picture must be a url and the manufacturer is a foreignkey to the Manufacturer model.
 
-**Automobile:** Defines color, year, vin, sale status, and model for each instance. The vin is a unique identifier. the model is a foreign key to the VehicleModel model.
+3. **Automobile:** Defines color, year, vin, sale status, and model for each instance. The vin is a unique identifier. the model is a foreign key to the VehicleModel model.
 
 ### URLS/Insomnia endpoints
 ##### Automobiles:
@@ -100,9 +100,11 @@ POST sample input:
 
 Service Microservice has 3 models: *Technician, Appointment, and AutomobileVO.*
 
-The *Appointment Model* uses the information from the other two models to view, edit, delete, and create new service appointments.
+1. *Technician Model:* Defines a technician as thier first and last name and a unique employee ID.
 
-The *AutomobileVO Model* is a Value Object that pulls the automobile data from the inventory with a poller. The poller will automatically gather information from the inventory database every 60 seconds. This data is then used to verify if a car that is scheduled for service was purchased from this dealership so those customers can receive special VIP treatment.
+2. *Appointment Model:* Uses the information from the other two models to view, edit, delete, and create new service appointments.
+
+3. *AutomobileVO Model:* A Value Object that pulls the automobile data from the inventory with a poller. The poller will automatically gather information from the inventory database every 60 seconds. This data is then used to verify if a car that is scheduled for service was purchased from this dealership so those customers can receive special VIP treatment.
 
 ### Ports:
 
