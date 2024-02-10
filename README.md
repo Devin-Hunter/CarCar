@@ -19,7 +19,7 @@ How to run the project?
 
 After all docker containers are running the project can be viewed on http://localhost:3000
 
-##### Diagram of the Project:
+### Diagram of the Project:
 
 ![Project-Diagram](img/CARCAR_Project_Diagram.png)
 
