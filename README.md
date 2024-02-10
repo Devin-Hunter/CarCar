@@ -40,8 +40,8 @@ After all docker containers are running the project can be viewed on http://loca
 ##### Automobiles:
 * GET: http://localhost:8100/api/automobiles/
 * POST: http://localhost:8100/api/automobiles/
-* PUT: http://localhost:8100/api/automobiles/ vin /
-* DELETE: http://localhost:8100/api/automobiles/ vin /
+* PUT: http://localhost:8100/api/automobiles/vin/
+* DELETE: http://localhost:8100/api/automobiles/vin/
 
 ```
 Post sample input:
