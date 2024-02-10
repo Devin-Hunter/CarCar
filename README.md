@@ -11,13 +11,13 @@ CarCar is comprised of three microservices, Inventory, Service, and Sales. Servi
 How to run the project?
  - clone repository to local machine
     in terminal:
-        git clone <<repository_url>>
+        `git clone <<repository_url>>`
  - build and run using Docker
     in terminal:
-        docker volume create beta-data
-        docker compose build
+        `docker volume create beta-data`
+        `docker compose build`
         --wait for build to complete--
-        docker compose up
+        `docker compose up`
  - After all docker containers are running the project can be viewed on http://localhost:3000
 
 Diagram of the Project:
@@ -99,11 +99,11 @@ POST sample input:
 
 ## Services microservice
 
-Service Microservice has 3 models: Technician, Appointment, and AutomobileVO.
+Service Microservice has 3 models: *Technician, Appointment, and AutomobileVO.*
 
-The Appointment Model uses the information from the other two models to view, edit, delete, and create new service appointments.
+The *Appointment Model* uses the information from the other two models to view, edit, delete, and create new service appointments.
 
-The AutomobileVO Model is a Value Object that pulls the automobile data from the inventory with a poller. The poller will automatically gather information from the inventory database every 60 seconds. This data is then used to verify if a car that is scheduled for service was purchased from this dealership so those customers can receive special VIP treatment.
+The *AutomobileVO Model* is a Value Object that pulls the automobile data from the inventory with a poller. The poller will automatically gather information from the inventory database every 60 seconds. This data is then used to verify if a car that is scheduled for service was purchased from this dealership so those customers can receive special VIP treatment.
 
 ### Ports:
 
@@ -132,30 +132,30 @@ Service-API Port: 8081
 Example Template to Create a New Appointment in Insomnia
 
 {
-"date_time": "2024-02-18 12:00",
-"vin": "2D4RN4DG9BR787100",
-"customer": "Ann Perkins",
-"technician": "jdoe",
-"reason": "Oil Change"
+    "date_time": "2024-02-18 12:00",
+    "vin": "2D4RN4DG9BR787100",
+    "customer": "Ann Perkins",
+    "technician": "jdoe",
+    "reason": "Oil Change"
 }
 
 Insomnia Response
 
 {
-"appointment": {
-    "id": 5,
-    "date_time": "2024-02-18 12:00",
-    "reason": "Oil Change",
-    "status": "Scheduled",
-    "vin": "2D4RN4DG9BR787100",
-    "customer": "Ann Perkins",
-    "technician": {
-        "first_name": "John",
-        "last_name": "Doe",
-        "employee_id": "jdoe",
-        "id": 3
+    "appointment": {
+        "id": 5,
+        "date_time": "2024-02-18 12:00",
+        "reason": "Oil Change",
+        "status": "Scheduled",
+        "vin": "2D4RN4DG9BR787100",
+        "customer": "Ann Perkins",
+        "technician": {
+            "first_name": "John",
+            "last_name": "Doe",
+            "employee_id": "jdoe",
+            "id": 3
+        }
     }
-}
 }
 
 ```
