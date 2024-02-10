@@ -51,10 +51,10 @@ const ServiceHistory = (props) => {
 
     return (
     <>
-        <nav className="navbar navbar-light my-1">
-            <div className="container-fluid">
+        <div className="container">
+            <nav className="navbar navbar-light my-1">
                 <span className="navbar-brand mb-0 h1 fs-1">Service History</span>
-                <input className="form-control me-2" onChange={handleSearch}  type="search" pattern={appointments.vin} list="datalistOptions" id="exampleDataList" placeholder="Vin search..." />
+                <input className="navbar-brand h1 mb-0 me-2" onChange={handleSearch}  type="search" pattern={appointments.vin} list="datalistOptions" id="exampleDataList" placeholder="Vin search..." />
                     <datalist id="datalistOptions">
                         {appointments.map(appt => {
                             return (
@@ -62,8 +62,8 @@ const ServiceHistory = (props) => {
                             )
                         })}
                     </datalist>
-            </div>
-        </nav>
+            </nav>
+        </div>
         <table className="table table-striped table-hover my-4">
             <thead>
                 <tr>
