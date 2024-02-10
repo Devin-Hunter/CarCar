@@ -40,8 +40,8 @@ After all docker containers are running the project can be viewed on http://loca
 ##### Automobiles:
 * GET: "http://localhost:8100/api/automobiles/"
 * POST: "http://localhost:8100/api/automobiles/"
-* PUT: http://localhost:8100/api/automobiles/<vin>/
-* DELETE: http://localhost:8100/api/automobiles/<vin>/
+* PUT: ht<span>tp://localhost:8100/api/automobiles/<vin>/
+* DELETE: ht<span>tp://localhost:8100/api/automobiles/<vin>/
 
 ```
 Post sample input:
@@ -117,15 +117,15 @@ Service-API Port: 8081
 
 * GET (List View): "http://localhost:8081/api/appointments"
 * POST (Create New Appointment): "http://localhost:8081/api/appointments/"
-* PUT (Edit Existing Appointment): http://localhost:8081/api/appointments/<int:pk>/
-* DELETE (Delete Appointment from Database): http://localhost:8081/api/appointments/<int:pk>/
+* PUT (Edit Existing Appointment): ht<span>tp://localhost:8081/api/appointments/<int:pk>/
+* DELETE (Delete Appointment from Database): ht<span>tp://localhost:8081/api/appointments/<int:pk>/
 
 
 **Technician URLs**
 
 * GET (List View): "http://localhost:8081/api/technicians/"
 * POST (Create New Technician): "http://localhost:8081/api/technicians/"
-* DELETE (Delete Technician from Database): http://localhost:8081/api/appointments/<int:pk>/
+* DELETE (Delete Technician from Database): ht<span>tp://localhost:8081/api/appointments/<int:pk>/
 
 
 
@@ -204,7 +204,7 @@ There are 4 models for the Sales microservice:
 ##### Salesperson:
 * GET = "http://localhost:8090/api/salespeople/"
 * POST = "http://localhost:8090/api/salespeople/"
-* DELETE = http://localhost:8090/api/salespeople/<int:pk>/
+* DELETE = ht<span>tp://localhost:8090/api/salespeople/<int:pk>/
 
 ```
 Sample JSON for POST:
