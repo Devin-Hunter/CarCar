@@ -16,9 +16,10 @@ How to run the project?
 * `docker compose build`
 3. wait for build to complete
 * `docker compose up`
- - After all docker containers are running the project can be viewed on http://localhost:3000
 
-Diagram of the Project:
+After all docker containers are running the project can be viewed on http://localhost:3000
+
+##### Diagram of the Project:
 
 ![Project-Diagram](img/CARCAR_Project_Diagram.png)
 
