@@ -8,7 +8,7 @@
 ### Design
 CarCar is comprised of three microservices: *Inventory, Service, and Sales.* Service and Sales each interact with Inventory to execute their features.
 
-How to run the project?
+### How to run the project?
 1. clone repository to local machine in terminal:
 * `git clone <<repository_url>>`
 2. build and run using Docker in terminal:
@@ -185,75 +185,76 @@ Insomnia Response
 
 ## Sales microservice
 
-Explain your models and integration with the inventory
-microservice, here.
+### Models
 
-Models:
-    There are 4 models for the Sales microservice:
+There are 4 models for the Sales microservice:
 
-    1. AutomobileVO: This defines how the data polled from Inventory should be represented as value objects for the sales microservice.
+1. **AutomobileVO:** This defines how the data polled from Inventory should be represented as value objects for the sales microservice.
 
-    2. Salesperson: This defines the data collected for each salesperson.
+2. **Salesperson:** This defines the data collected for each salesperson.
 
-    3. Customer: This defines the data collected for each customer.
+3. **Customer:** This defines the data collected for each customer.
 
-    4. Sale: The data for each sale instance is comprised of a price field as well as an instance of each of the other 3 models.
+4. **Sale:** The data for each sale instance is comprised of a price field as well as an instance of each of the other 3 models.
 
-Insomnia endpoints:
-    Salesperson:
-        GET = http://localhost:8090/api/salespeople/
-        POST = http://localhost:8090/api/salespeople/
-        DELETE = http://localhost:8090/api/salespeople/<int:pk>/
-<!--
-        sample json for POST:
-        {
-            "first_name": "John",
-            "last_name": "Doe",
-            "employee_id": "555"
-        }
--->
+### URLS/Insomnia endpoints:
 
-    Customer:
-        GET = http://localhost:8090/api/customers/
-        POST = http://localhost:8090/api/customers/
+##### Salesperson:
+* GET = "http://localhost:8090/api/salespeople/"
+* POST = "http://localhost:8090/api/salespeople/"
+* DELETE = "http://localhost:8090/api/salespeople/<int:pk>/"
 
-<!--
-        sample json for POST:
-        {
-            "first_name": "Marie",
-            "last_name": "Curie",
-            "address": "1906 Radium Ln",
-            "phone_number": 1234567
-        }
--->
+```
+Sample JSON for POST:
 
+{
+    "first_name": "John",
+    "last_name": "Doe",
+    "employee_id": "555"
+}
+```
 
-    Sale:
-        GET = http://localhost:8090/api/sales/
-        POST = http://localhost:8090/api/sales/
+##### Customer:
+* GET = "http://localhost:8090/api/customers/"
+* POST = "http://localhost:8090/api/customers/"
 
-<!--
-        {
-            "automobile": "1C3CC5FB2AN1273", (vin)
-            "salesperson": 111, (employee_id)
-            "customer": 1, (customer id)
-            "price": 8753 (integer)
-        }
--->
+```
+Sample JSON for POST:
 
-    AutomobileVO:
-        GET: http://localhost:8090/api/autoVO/
+{
+    "first_name": "Marie",
+    "last_name": "Curie",
+    "address": "1906 Radium Ln",
+    "phone_number": 1234567
+}
+```
 
-Front end paths:
-    Salespeople:
-        List salespeople: http://localhost:3000/salesperson
-        Create salesperon: http://localhost:3000/salesperson/new
+##### Sale:
+* GET = "http://localhost:8090/api/sales/"
+* POST = "http://localhost:8090/api/sales/"
 
-    Customers:
-        List customers: http://localhost:3000/customers
-        Add a customer: http://localhost:3000/customers/new
+```
+{
+    "automobile": "1C3CC5FB2AN1273", (vin)
+    "salesperson": 111, (employee_id)
+    "customer": 1, (customer id)
+    "price": 8753 (integer)
+}
+```
 
-    Sales:
-        List all sales: http://localhost:3000/sales
-        List sales by employee: http://localhost:3000/sales/employee
-        Create a new sale: http://localhost:3000/sales/new
+##### AutomobileVO:
+* GET: "http://localhost:8090/api/autoVO/"
+
+### Front end paths
+##### Salespeople:
+* List salespeople: "http://localhost:3000/salesperson"
+* Create salesperon: "http://localhost:3000/salesperson/new"
+
+##### Customers:
+* List customers: "http://localhost:3000/customers"
+* Add a customer: "http://localhost:3000/customers/new"
+
+##### Sales:
+* List all sales: "http://localhost:3000/sales"
+* List sales by employee: "http://localhost:3000/sales/employee"
+* Create a new sale: "http://localhost:3000/sales/new"
