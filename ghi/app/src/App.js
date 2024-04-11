@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
+import './index.css';
 import MainPage from './MainPage';
 import Nav from './Nav';
 import AddSalesPerson from './AddSalespersonForm';
@@ -84,7 +85,6 @@ function App() {
   return (
     <BrowserRouter>
       <Nav />
-      <div className="container">
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path='/automobiles' element={<ListInventory />} />
@@ -111,7 +111,6 @@ function App() {
             <Route path="/models" element={<ModelsList manufacturer={manufacturer}/>} />
           </Route>
         </Routes>
-      </div>
     </BrowserRouter>
   );
 }
